@@ -354,24 +354,20 @@ p {
 /* ===========================================
    HERO SECTION
    =========================================== */
-
-/* Pattachitra-inspired repeating SVG border motif as background */
 .hero {
     background-color: var(--color-maroon-dark);
     background-image:
-        /* Dark gradient overlay for text readability */
         linear-gradient(
             160deg,
             rgba(74, 15, 15, 0.92) 0%,
             rgba(44, 10, 10, 0.88) 50%,
             rgba(74, 15, 15, 0.94) 100%
         ),
-        /* Pattachitra-inspired repeating geometric SVG pattern */
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='none'/%3E%3C!-- Outer diamond ---%3E%3Cpolygon points='40,4 76,40 40,76 4,40' fill='none' stroke='%23C8961E' stroke-width='0.8' stroke-opacity='0.25'/%3E%3C!-- Inner diamond ---%3E%3Cpolygon points='40,14 66,40 40,66 14,40' fill='none' stroke='%23C8961E' stroke-width='0.6' stroke-opacity='0.18'/%3E%3C!-- Center dot ---%3E%3Ccircle cx='40' cy='40' r='2.5' fill='%23C8961E' fill-opacity='0.2'/%3E%3C!-- Corner petals ---%3E%3Ccircle cx='40' cy='4'  r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3Ccircle cx='76' cy='40' r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3Ccircle cx='40' cy='76' r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3Ccircle cx='4'  cy='40' r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3C!-- Corner cross marks ---%3E%3Cline x1='0'  y1='0'  x2='8'  y2='8'  stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3Cline x1='80' y1='0'  x2='72' y2='8'  stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3Cline x1='0'  y1='80' x2='8'  y2='72' stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3Cline x1='80' y1='80' x2='72' y2='72' stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='none'/%3E%3Cpolygon points='40,4 76,40 40,76 4,40' fill='none' stroke='%23C8961E' stroke-width='0.8' stroke-opacity='0.25'/%3E%3Cpolygon points='40,14 66,40 40,66 14,40' fill='none' stroke='%23C8961E' stroke-width='0.6' stroke-opacity='0.18'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='%23C8961E' fill-opacity='0.2'/%3E%3Ccircle cx='40' cy='4'  r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3Ccircle cx='76' cy='40' r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3Ccircle cx='40' cy='76' r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3Ccircle cx='4'  cy='40' r='2' fill='%23C8961E' fill-opacity='0.15'/%3E%3Cline x1='0'  y1='0'  x2='8'  y2='8'  stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3Cline x1='80' y1='0'  x2='72' y2='8'  stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3Cline x1='0'  y1='80' x2='8'  y2='72' stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3Cline x1='80' y1='80' x2='72' y2='72' stroke='%23C8961E' stroke-width='0.5' stroke-opacity='0.12'/%3E%3C/svg%3E");
     background-size: auto, 80px 80px;
 }
 
-/* Chandua-style arch — decorative canopy above couple names */
+/* Chandua-style arch */
 .hero__arch {
     position: absolute;
     top: 0;
@@ -383,7 +379,6 @@ p {
     z-index: 1;
 }
 
-/* Top arch using border and radial gradient */
 .hero__arch::before {
     content: '';
     position: absolute;
@@ -394,7 +389,6 @@ p {
     border-left:  2px solid rgba(200, 150, 30, 0.35);
     border-right: 2px solid rgba(200, 150, 30, 0.35);
     border-top:   2px solid rgba(200, 150, 30, 0.35);
-    border-radius: 0 0 0 0;
     border-top-left-radius:  50% 100px;
     border-top-right-radius: 50% 100px;
     background: radial-gradient(
@@ -404,7 +398,6 @@ p {
     );
 }
 
-/* Bottom decorative fringe of the Chandua arch */
 .hero__arch::after {
     content: '';
     position: absolute;
@@ -423,7 +416,7 @@ p {
     border-radius: 50%;
 }
 
-/* Floating particle container */
+/* Floating particles */
 .hero__particles {
     position: absolute;
     inset: 0;
@@ -432,9 +425,6 @@ p {
     overflow: hidden;
 }
 
-/* Generate 12 floating petals using pseudo-element + CSS counters trick.
-   We use a single ::before and ::after on a set of generated box-shadows
-   to mimic multiple particles without extra HTML. */
 .hero__particles::before,
 .hero__particles::after {
     content: '';
@@ -445,7 +435,6 @@ p {
     background-color: rgba(200, 150, 30, 0.45);
     animation: float-petal 12s ease-in-out infinite;
     box-shadow:
-        /* Each shadow is one petal: x-offset  y-offset  blur  spread  color */
         10vw   10vh  0 0 rgba(200, 150, 30, 0.30),
         25vw   60vh  0 0 rgba(232, 184, 75, 0.25),
         40vw   25vh  0 0 rgba(200, 150, 30, 0.20),
@@ -501,19 +490,60 @@ p {
     width: 100%;
 }
 
-/* "ଜୟ ଜଗନ୍ନାଥ" — the topmost invocation */
+/* ===========================================
+   HERO GANESHA IMAGE
+   =========================================== */
+.hero__ganesha {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    margin-bottom:   0.25rem;
+}
+
+.hero__ganesha-img {
+    width:          clamp(120px, 20vw, 200px);
+    height:         auto;
+    object-fit:     contain;
+    mix-blend-mode: luminosity;
+    filter:
+        drop-shadow(0 0 18px rgba(200, 150, 30, 0.55))
+        drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5))
+        brightness(1.08)
+        saturate(1.15);
+    animation: ganesha-breathe 5s ease-in-out infinite;
+}
+
+@keyframes ganesha-breathe {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        filter:
+            drop-shadow(0 0 18px rgba(200, 150, 30, 0.55))
+            drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5))
+            brightness(1.08)
+            saturate(1.15);
+    }
+    50% {
+        transform: translateY(-6px) scale(1.02);
+        filter:
+            drop-shadow(0 0 28px rgba(200, 150, 30, 0.75))
+            drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45))
+            brightness(1.12)
+            saturate(1.2);
+    }
+}
+
+/* Invocation */
 .hero__invocation {
-    font-size:    clamp(0.9rem, 3.0vw, 1.4rem);
-    font-weight:  800;
-    color:        var(--color-gold-light);
+    font-size:      clamp(0.9rem, 3.0vw, 1.4rem);
+    font-weight:    800;
+    color:          var(--color-gold-light);
     text-shadow:
         0 0 30px rgba(200, 150, 30, 0.5),
         0 2px  6px rgba(0, 0, 0, 0.6);
     letter-spacing: 0.04em;
-    margin-bottom: 0.25rem;
+    margin-bottom:  0.25rem;
 }
 
-/* Thin gold rule beneath the invocation */
 .hero__invocation::after {
     content: '';
     display: block;
@@ -528,7 +558,7 @@ p {
     margin: 0.6rem auto 0;
 }
 
-/* Formal welcome line */
+/* Welcome text */
 .hero__welcome {
     font-size:   clamp(0.9rem, 2.2vw, 1.05rem);
     font-style:  italic;
@@ -538,7 +568,7 @@ p {
     line-height: 1.65;
 }
 
-/* Names block — the visual centrepiece */
+/* Names block */
 .hero__names {
     display:        flex;
     flex-direction: column;
@@ -547,7 +577,6 @@ p {
     margin-block:   0.5rem;
 }
 
-/* Odia name placeholders */
 .hero__names--odia {
     font-size:      clamp(1rem, 3vw, 1.3rem);
     font-weight:    500;
@@ -556,7 +585,6 @@ p {
     font-style:     italic;
 }
 
-/* Main English couple name — the visual anchor of the whole page */
 .hero__names--english {
     font-family:    var(--font-english);
     font-size:      clamp(2.4rem, 8vw, 5rem);
@@ -568,13 +596,11 @@ p {
     letter-spacing: 0.02em;
     line-height:    1.15;
     text-align:     center;
-
-    /* Gold underline beneath the name */
     padding-bottom: 0.3em;
     border-bottom:  2px solid rgba(200, 150, 30, 0.45);
 }
 
-/* Subtext — formal invitation line */
+/* Subtext */
 .hero__subtext {
     font-size:   clamp(0.875rem, 2vw, 1rem);
     color:       rgba(245, 230, 184, 0.75);
@@ -584,21 +610,21 @@ p {
     font-style:  italic;
 }
 
-/* Scroll CTA button */
+/* CTA button */
 .hero__cta {
-    display:         inline-flex;
-    align-items:     center;
-    gap:             0.5rem;
-    margin-top:      0.75rem;
-    padding:         0.65rem 1.75rem;
-    border:          1px solid rgba(200, 150, 30, 0.55);
-    border-radius:   var(--border-radius-lg);
-    color:           var(--color-gold-light);
-    font-family:     var(--font-english);
-    font-size:       0.9rem;
-    letter-spacing:  0.08em;
-    text-transform:  uppercase;
-    background:      rgba(200, 150, 30, 0.1);
+    display:        inline-flex;
+    align-items:    center;
+    gap:            0.5rem;
+    margin-top:     0.75rem;
+    padding:        0.65rem 1.75rem;
+    border:         1px solid rgba(200, 150, 30, 0.55);
+    border-radius:  var(--border-radius-lg);
+    color:          var(--color-gold-light);
+    font-family:    var(--font-english);
+    font-size:      0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background:     rgba(200, 150, 30, 0.1);
     transition:
         background-color var(--transition-base),
         border-color     var(--transition-base),
@@ -620,6 +646,29 @@ p {
 @keyframes bounce-arrow {
     0%, 100% { transform: translateY(0);   }
     50%       { transform: translateY(5px); }
+}
+
+/* ===========================================
+   FALLING LOTUS FLOWERS
+   =========================================== */
+.lotus-petal {
+    position:       absolute;
+    top:            -60px;
+    pointer-events: none;
+    z-index:        1;
+    opacity:        0;
+    animation:      lotus-fall linear infinite;
+}
+
+.lotus-petal svg {
+    display: block;
+}
+
+@keyframes lotus-fall {
+    0%   { opacity: 0;    transform: translateY(0px)    rotate(0deg)   scale(1);    }
+    8%   { opacity: 0.75; }
+    85%  { opacity: 0.6;  }
+    100% { opacity: 0;    transform: translateY(105vh)  rotate(320deg) scale(0.85); }
 }
 
 
@@ -645,8 +694,18 @@ p {
         font-size: clamp(0.95rem, 3.8vw, 1.25rem);
     }
 
+    /* KEY FIX: push Ganesha to the very top of the flex column */
     .hero__content {
         padding-top: 0.1rem;
+    }
+
+    .hero__ganesha {
+        order: -1;  /* Always first child visually */
+        margin-bottom: 0.5rem;
+    }
+
+    .hero__ganesha-img {
+        width: 110px;
     }
 }
 
