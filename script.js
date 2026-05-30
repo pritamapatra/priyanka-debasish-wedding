@@ -345,6 +345,7 @@
             }(i));
         }
     }
+<<<<<<< HEAD
                 /* ===========================================
        MODULE 7 — LETTER DRIFT SPLASH SCREEN
        Letters scatter randomly on screen,
@@ -621,4 +622,7 @@
             });
         }
     });
+=======
+
+>>>>>>> 1c9a28b64bfcf7f6d38316e005cffa194f52d34f
 }());

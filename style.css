@@ -955,6 +955,7 @@ p {
     transform: translateY(0);
 }
 
+<<<<<<< HEAD
 /* Smooth fade-in once image loads */
 .gallery__tile img {
     position:   absolute;
@@ -970,6 +971,12 @@ p {
 
 .gallery__tile img.is-loaded {
     opacity: 1;                       /* Reveal once loaded */
+=======
+/* Placeholder state — when no image is loaded yet */
+.gallery__tile img[src="./assets/images/img-01.jpg"]:not([complete]),
+.gallery__tile img[src$=".jpg"]:not([naturalWidth]) {
+    opacity: 0;
+>>>>>>> 1c9a28b64bfcf7f6d38316e005cffa194f52d34f
 }
 
 /* Shown text when image is absent — the caption stays visible */
@@ -1498,6 +1505,7 @@ p {
         opacity:   0;
         transform: translateY(105vh) rotate(320deg) scale(0.85);
     }
+<<<<<<< HEAD
 }
 
 /* ===========================================
@@ -1642,3 +1650,6 @@ p {
     50%       { transform: rotate(45deg) translateY(4px); }
 }
 
+=======
+}
+>>>>>>> 1c9a28b64bfcf7f6d38316e005cffa194f52d34f
