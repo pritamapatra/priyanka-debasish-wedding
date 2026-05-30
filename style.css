@@ -955,7 +955,7 @@ p {
     transform: translateY(0);
 }
 
-<<<<<<< HEAD
+
 /* Smooth fade-in once image loads */
 .gallery__tile img {
     position:   absolute;
@@ -971,12 +971,6 @@ p {
 
 .gallery__tile img.is-loaded {
     opacity: 1;                       /* Reveal once loaded */
-=======
-/* Placeholder state — when no image is loaded yet */
-.gallery__tile img[src="./assets/images/img-01.jpg"]:not([complete]),
-.gallery__tile img[src$=".jpg"]:not([naturalWidth]) {
-    opacity: 0;
->>>>>>> 1c9a28b64bfcf7f6d38316e005cffa194f52d34f
 }
 
 /* Shown text when image is absent — the caption stays visible */
@@ -1505,151 +1499,4 @@ p {
         opacity:   0;
         transform: translateY(105vh) rotate(320deg) scale(0.85);
     }
-<<<<<<< HEAD
 }
-
-/* ===========================================
-   SPLASH SCREEN — LETTER DRIFT
-=========================================== */
-.splash {
-    position:   fixed;
-    inset:      0;
-    z-index:    9999;
-    background: radial-gradient(
-        ellipse at center,
-        #2a0808 0%,
-        #150404 55%,
-        #0a0101 100%
-    );
-    cursor:     pointer;
-    overflow:   hidden;
-    transition: opacity 1s ease;
-}
-
-/* Stage holds all letter elements.
-   perspective here enables real 3D depth
-   for the scatter phase. */
-.splash__stage {
-    position:        absolute;
-    inset:           0;
-    perspective:     900px;
-    pointer-events:  none;
-}
-
-/* Each individual letter */
-.splash__letter {
-    position:         absolute;
-    left:             0;
-    top:              0;
-    display:          inline-block;
-    color:            rgba(232, 184, 75, 0.92);
-    text-shadow:
-        0 0  18px rgba(200, 150, 30, 0.65),
-        0 0  36px rgba(200, 150, 30, 0.25);
-    pointer-events:   none;
-    user-select:      none;
-    will-change:      transform, opacity;
-    transform-origin: center center;
-    line-height:      1;
-    white-space:      pre;
-}
-
-/* Odia heading + tagline — top center */
-.splash__top-text {
-    position:       absolute;
-    top:            clamp(2rem, 6vh, 4rem);
-    left:           50%;
-    transform:      translateX(-50%);
-    text-align:     center;
-    pointer-events: none;
-    z-index:        2;
-    display:        flex;
-    flex-direction: column;
-    align-items:    center;
-    gap:            0.35rem;
-    opacity:        0;
-    white-space:    nowrap;
-    animation:      splash-text-in 1.2s ease 0.5s forwards;
-}
-
-@keyframes splash-text-in {
-    from { opacity: 0; transform: translateX(-50%) translateY(-10px); }
-    to   { opacity: 1; transform: translateX(-50%) translateY(0);     }
-}
-
-.splash__odia {
-    font-size:      clamp(1.5rem, 5vw, 2.5rem);
-    font-weight:    800;
-    color:          var(--color-gold-light);
-    letter-spacing: 0.06em;
-    text-shadow:
-        0 0  20px rgba(200, 150, 30, 0.75),
-        0 2px 8px  rgba(0, 0, 0, 0.8);
-}
-
-.splash__odia::after {
-    content:  '';
-    display:  block;
-    width:    80px;
-    height:   1.5px;
-    background: linear-gradient(
-        90deg, transparent, var(--color-gold), transparent
-    );
-    margin: 0.45rem auto 0;
-}
-
-.splash__tagline {
-    font-size:      clamp(0.75rem, 2vw, 0.88rem);
-    font-style:     italic;
-    color:          rgba(245, 230, 184, 0.5);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-/* Touch prompt */
-.splash__prompt {
-    position:       absolute;
-    bottom:         clamp(2rem, 6vh, 3.5rem);
-    left:           50%;
-    transform:      translateX(-50%) translateY(10px);
-    z-index:        4;
-    display:        flex;
-    flex-direction: column;
-    align-items:    center;
-    gap:            0.5rem;
-    pointer-events: none;
-    opacity:        0;
-    transition:     opacity 0.9s ease, transform 0.9s ease;
-    white-space:    nowrap;
-}
-
-.splash__prompt-text {
-    font-size:      clamp(0.7rem, 2vw, 0.82rem);
-    color:          rgba(232, 184, 75, 0.6);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    animation:      prompt-pulse 2.2s ease-in-out infinite;
-}
-
-@keyframes prompt-pulse {
-    0%, 100% { opacity: 0.4; }
-    50%       { opacity: 1;  }
-}
-
-.splash__prompt-arrow {
-    width:         11px;
-    height:        11px;
-    border-right:  1.5px solid rgba(200, 150, 30, 0.55);
-    border-bottom: 1.5px solid rgba(200, 150, 30, 0.55);
-    transform:     rotate(45deg);
-    animation:     arrow-bounce 1.8s ease-in-out infinite;
-}
-
-@keyframes arrow-bounce {
-    0%, 100% { transform: rotate(45deg) translateY(0);   }
-    50%       { transform: rotate(45deg) translateY(4px); }
-}
-
-=======
-}
->>>>>>> 1c9a28b64bfcf7f6d38316e005cffa194f52d34f
