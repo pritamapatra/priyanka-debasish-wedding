@@ -676,14 +676,36 @@ p {
    HERO RESPONSIVE OVERRIDES
    =========================================== */
 @media (max-width: 480px) {
+    /* Shrink the arch so it doesn't push content down */
     .hero__arch {
-        height: 140px;
+        height: 90px;
     }
 
     .hero__arch::before {
-        height: 130px;
-        border-top-left-radius:  50% 65px;
-        border-top-right-radius: 50% 65px;
+        height: 80px;
+        border-top-left-radius:  50% 40px;
+        border-top-right-radius: 50% 40px;
+    }
+
+    /* Stop vertically centering — anchor content to top instead */
+    .hero {
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .hero__content {
+        padding-top: clamp(5rem, 12vw, 7rem); /* clears the arch */
+        padding-bottom: clamp(2rem, 6vw, 4rem);
+    }
+
+    /* Ganesha first */
+    .hero__ganesha {
+        order: -1;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero__ganesha-img {
+        width: 110px;
     }
 
     .hero__names--english {
@@ -692,20 +714,6 @@ p {
 
     .hero__invocation {
         font-size: clamp(0.95rem, 3.8vw, 1.25rem);
-    }
-
-    /* KEY FIX: push Ganesha to the very top of the flex column */
-    .hero__content {
-        padding-top: 0.1rem;
-    }
-
-    .hero__ganesha {
-        order: -1;  /* Always first child visually */
-        margin-bottom: 0.5rem;
-    }
-
-    .hero__ganesha-img {
-        width: 110px;
     }
 }
 
